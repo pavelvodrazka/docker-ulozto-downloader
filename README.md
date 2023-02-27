@@ -38,7 +38,7 @@ docker run --tty --rm \
 
 ## Volumes
 
-`/downloads` — Folder where to put downloaded files
+`/downloads` - Volume where to put downloaded files.
 
 ## Downloader Options
 
@@ -66,5 +66,5 @@ Other options:
 
 ## Credits
 
-[Jiří Setnička](https://github.com/setnicka) - author of the [ulozto-downloader](https://github.com/setnicka/ulozto-downloader) used by this image.
+[Jiří Setnička](https://github.com/setnicka) - Author of the [ulozto-downloader](https://github.com/setnicka/ulozto-downloader) used by this image.
 
