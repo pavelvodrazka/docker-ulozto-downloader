@@ -9,31 +9,29 @@ Debian based image of  [ulozto-downloader](https://github.com/setnicka/ulozto-do
 
 ## Usage 
 
-### docker-compose
-
-##### docker-compose.yml
-```
-version: "3"
-services:
-  ulozto-downloader:
-    image: pjslf/ulozto-downloader
-    container_name: ulozto-downloader
-    volumes:
-      - /media/downloads:/downloads
-    restart: never
-```
-##### run command
-```
-docker-compose run --rm ulozto-downloader [OPTIONS] URL
-```
-
 ### docker cli
 
 ```
 docker run --tty --rm \
   --name ulozto-downloader \
-  --volume /media/downloads:/downloads \
+  --volume ~/downloads:/downloads \
   pjslf/ulozto-downloader [OPTIONS] URL
+```
+
+### shell script
+
+```
+#!/bin/bash
+
+USER=$(id -u)
+GROUP=$(id -g)
+DOWNLOADS=~/downloads
+
+docker run --tty --rm \
+    --name ulozto-downloader \
+    --user $USER:$GROUP \
+    --volume $DOWNLOADS:/downloads \
+    pjslf/ulozto-downloader "$@"
 ```
 
 ## Volumes
