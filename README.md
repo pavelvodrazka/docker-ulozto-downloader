@@ -2,8 +2,10 @@
 
 ![Docker Pulls](https://img.shields.io/docker/pulls/pjslf/ulozto-downloader?label=PULLS&logo=docker&logoColor=white&style=for-the-badge)
 ![Docker Stars](https://img.shields.io/docker/stars/pjslf/ulozto-downloader?label=STARS&logo=docker&logoColor=white&style=for-the-badge)
-![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/pjslf/ulozto-downloader/latest?logo=docker&logoColor=white&color=blue&style=for-the-badge)
+![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/pjslf/ulozto-downloader/latest?logo=docker&logoColor=white&style=for-the-badge)
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/pjslf/ulozto-downloader/latest?logo=docker&logoColor=white&style=for-the-badge)
+![GitHub Repo stars](https://img.shields.io/github/stars/pavelvodrazka/docker-ulozto-downloader?logo=github&style=for-the-badge)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/pavelvodrazka/docker-ulozto-downloader/docker-publish.yml?logo=github&style=for-the-badge)
 
 Debian based image of  [ulozto-downloader](https://github.com/setnicka/ulozto-downloader) containing TensorFlow Lite to support automatic CAPTCHA solving.
 
@@ -15,12 +17,12 @@ Debian based image of  [ulozto-downloader](https://github.com/setnicka/ulozto-do
 docker run --tty --rm \
   --name ulozto-downloader \
   --volume ~/downloads:/downloads \
-  pjslf/ulozto-downloader [OPTIONS] URL
+  pjslf/ulozto-downloader [OPTIONS] $URL
 ```
 
 ### shell script
 
-```
+```bash
 #!/bin/bash
 
 USER=$(id -u)
