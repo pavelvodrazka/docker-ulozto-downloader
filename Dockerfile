@@ -12,7 +12,7 @@ RUN \
         python3-pip \
         python3-venv && \
     python3 -m venv /app && \
-    pip install ulozto-downloader[auto-captcha]==3.4.1 && \
+    pip install ulozto-downloader[auto-captcha]==3.3.1 && \
     pip uninstall -y setuptools pip
 
 FROM base
