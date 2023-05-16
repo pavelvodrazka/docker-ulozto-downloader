@@ -4,6 +4,8 @@ FROM base as builder
 
 ENV PATH="/app/bin:$PATH"
 
+ARG DOWNLOADER_VERSION=3.3.1
+
 RUN \
     apt update && \
     apt upgrade -y && \
@@ -12,7 +14,7 @@ RUN \
         python3-pip \
         python3-venv && \
     python3 -m venv /app && \
-    pip install ulozto-downloader[auto-captcha]==3.3.1 && \
+    pip install ulozto-downloader[auto-captcha]==$DOWNLOADER_VERSION && \
     pip uninstall -y setuptools pip
 
 FROM base
